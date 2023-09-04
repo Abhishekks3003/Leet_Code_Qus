@@ -11,6 +11,7 @@ public:
                 return 0;
             }
             rev=(rev*10)+dig;
+            
 
             x/=10;
             
