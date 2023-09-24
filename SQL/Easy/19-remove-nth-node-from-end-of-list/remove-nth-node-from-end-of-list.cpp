@@ -29,7 +29,9 @@ public:
             second=second->next;
         }
 
-        second->next=second->next->next;
+        ListNode *temp=second->next;
+        second->next=temp->next;
+        delete temp;
 
         return head;
 
