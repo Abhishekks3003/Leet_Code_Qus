@@ -18,19 +18,17 @@ public:
         // }
         while(curr!=NULL){
             if(curr->val==val){
-                if(prev==NULL){
+                if(prev==NULL)
                     head=curr->next;
-                    curr=curr->next;
-                }
-                else{ 
+                else
                     prev->next=curr->next;
-                    curr=curr->next;
-                }
+                    
+            
                 
-            }else{
+            }else
                 prev=curr;
-                curr=curr->next;
-            }    
+            curr=curr->next;
+                
         }
 
         return head;
