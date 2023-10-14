@@ -5,18 +5,22 @@ public:
         if(s.length()!=t.length()){
             return 0;
         }
-        unordered_map<char,int> mp1;
-        unordered_map<char,int> mp2;
-
-        for(int i=0;i<s.length();i++){
-            mp1[s[i]]++;
-        }
-
-        for(int j=0;j<t.length();j++){
-            mp2[t[j]]++;
-        }
+        map<char,int> mp;
+        for(int i=0;i<s.length();i++)
+            mp[s[i]]++;
 
 
-        return mp1==mp2;
+        for(int i=0;i<t.length();i++){
+            if(mp.find(t[i])!=mp.end()){
+                if(mp[t[i]]>0)
+                    mp[t[i]]--;
+                else
+                    return 0;    
+            }else{
+                return 0;
+            }
+        }   
+
+        return 1;
     }
 };
