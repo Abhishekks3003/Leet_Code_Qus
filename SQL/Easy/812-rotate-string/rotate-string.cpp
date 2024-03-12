@@ -15,7 +15,7 @@ public:
             }
             else{   
                 s=s1;
-                s1="";
+                //s1="";
             }
         }
         return 0;    
