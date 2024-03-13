@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode *gettemp(ListNode *head,int i){
         //0-3
-        ListNode *&curr=head;
+        ListNode *curr=head;
         int temp=1;
         while(temp!=i){
             curr=curr->next;
@@ -34,12 +34,7 @@ public:
             len++;
         }
         
-
-        if(k%len==0)
-            return head;
-
-        k=k%len;    
-
+        k=k%len;
 
         tail->next=head;
         ListNode *temp=gettemp(head,len-k);
