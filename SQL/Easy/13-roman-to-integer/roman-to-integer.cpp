@@ -9,18 +9,17 @@ public:
         mp['C']=100;
         mp['D']=500;
         mp['M']=1000;
-        
+
         int sum=0;
-        
         for(int i=0;i<s.length();i++){
-            if(mp[s[i]]>=mp[s[i+1]]){
-                sum+=mp[s[i]];
-            }else{
+            if(mp[s[i]]<mp[s[i+1]]){
                 sum+=(mp[s[i+1]]-mp[s[i]]);
                 i++;
             }
+            else
+                sum+=mp[s[i]];    
         }
-        
+
         return sum;
     }
 };
