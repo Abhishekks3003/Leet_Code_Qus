@@ -1,22 +1,18 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        long rev=0;
-        int m=x;
-
-        if(x<0){
-            return 0;
-        }
+        long long new_num=0;
+        
+        int c=x;
         while(x!=0){
-            int dig=x%10;
-            rev=(rev*10)+dig;
+            int d=x%10;
+            new_num=new_num*10+d;
             x/=10;
         }
 
-        if(rev==m){
+        if(new_num==abs(c))
             return 1;
-        }else{
-            return 0;
-        }
+
+        return 0;    
     }
 };
