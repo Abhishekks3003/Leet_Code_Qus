@@ -2,20 +2,19 @@ class Solution {
 public:
     int singleNumber(vector<int>& nums) {
 
-        map<int,int> mp;
+        sort(nums.begin(),nums.end());
+
         int ans=0;
-        if(nums.size()==1)
-            return nums[0];
+        int n=nums.size();
 
+         if(n==1)
+             return nums[0];
+       
 
-        for(auto a:nums)
-            mp[a]++;
-
-
-        for(auto a:mp){
-            if(a.second==1){
-                ans= a.first;
-                break;    
+        for(int i=0;i<nums.size();i+=2){
+            if(nums[i]!=nums[i+1]){
+                ans= nums[i];
+                break;
             }
         }
 
